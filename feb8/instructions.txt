@@ -10,6 +10,8 @@ echo '</pre>';
 
 3.1. You can take some time to make this look pretty with CSS if you have time/desire to.
 
+
+
 4. in applicant service create a method that will receive string $level as a parameter and return an array of applicants whose level is the same as the $level parameter.  (Filter out any applicants whose level does not match the passed in parameter).  Then update your index.php so that the $applicants variable only contains applicants who have the correct level.  Hint: make use of existing methods to help you with this.
 
 5. in applicant service create a method that takes in int $experience and returns an array of applicants who have at minimum the number of yearh experience passed in.  then update your index.php so that the $applicants variable only contains applicants who have at least the amount of experience requested.  Hint: make use of existing methods to help you with this.

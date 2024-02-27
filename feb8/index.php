@@ -10,10 +10,18 @@ include_once(ABS_PATH . '/views/form.view.php');
 include_once(ABS_PATH . '/views/applicant-summary.view.php');
 include_once(ABS_PATH . '/views/footer.view.php');
 
-// if (isset($_GET)){
-//     print_r($_GET);
-// }
+$dbService = new DBService();
+$applicantService = new ApplicantService($dbService);
+$users = $applicantService->get_users_from_database();
 
-// echo '<pre>';
-// print_r($users[0]);
-// echo '</pre>';
+foreach ($users as $user) {
+    $applicant = [
+        'firstName' => $user['first'],
+        'lastName' => $user['last'],
+        'experience' => $user['experience'],
+        'level' => $user['level'],
+        'skills' => implode(', ', $user['skills']),
+    ];
+}
+
+?>

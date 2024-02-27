@@ -13,3 +13,37 @@ function get_users_from_database():array{
 	//simply returns an unfiltered list of users from applicants.json
 	return get_users();
 }
+
+class Applicant {
+	public string $first;
+	public string $last;
+	public int $experience;
+	public string $level;
+	public array $skills;
+
+	public function __construct($first, $last, $experience, $level, $skills)
+	{
+		$this->first = $first;
+		$this->last = $last;
+		$this->experience = $experience;
+		$this->level = $level;
+		$this->skills = $skills;
+	}
+}
+
+class ApplicantService {
+	private $dbService;
+
+	public function __construct(DBService $dbService)
+	{
+		$this->dbService = $dbService;
+	}
+
+	public function get_users_from_database(): array {
+		return $this->dbService->get_users();
+	}
+	public function get_users_by_level(string $level): array {
+		$users = $this->get_users_from_database();
+		return array_filter($users, fn($user) => $user->level === $level);
+	}
+}
