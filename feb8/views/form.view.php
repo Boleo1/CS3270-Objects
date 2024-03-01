@@ -34,7 +34,7 @@
 				<option value="<?= $skills[$i]?>"><?= $skills[$i]?></option>
 			<?php endfor;?>
 		</select>
-		<select name="skill2" id="skill2">
+		<select name="skill3" id="skill3">
 			<option value=""></option>
 			<?php for($i=0; $i<count($skills); $i++):?>
 				<option value="<?= $skills[$i]?>"><?= $skills[$i]?></option>

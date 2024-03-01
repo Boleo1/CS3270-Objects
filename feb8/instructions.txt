@@ -18,7 +18,7 @@ echo '</pre>';
 
 6. in applicant service create a method that takes array $skills as a parameter, and returns a list of applicants who have at least one of those skills.  Then update your index.php so that the $applicants variable holds only applicants who have at least 1 of the requested skills. Hint: make use of existing methods to help you with this.
 
-7. In applicant service create a method that takes in string $level, int $experience, and array $skills and returns a list of applicants who match those requirements.  Then update your index.php so that the $applicants variable holds only the applicants who meet the requirements listed in the form.  Hint: make use of existing methods to help you with this.
+7. In applicant service create a method that takes in string $level, int $experience, and array $skills and returns a list of applicants who match those requirements. Then update your index.php so that the $applicants variable holds only the applicants who meet the requirements listed in the form.  Hint: make use of existing methods to help you with this.
 
 8. Currently the list of applicants is unsorted.  In applicant service make a method that will take in array $applicants and return a sorted list of applicants.  For this, applicants who have 3/3 matching skills should be sorted higher than applicants who have only 1/3 mathing skills.  Applicants who have 6 years of experience should be sorted higher than applicants of 2 years experience.  Then update yoru method from exercise 7 to make use of this new method.
 
