@@ -5,7 +5,6 @@ require_once('./applicants.service.php');
 $applicantService = new ApplicantService();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['jobTitle'])) {
-    // Extract form data
     $level = $_GET['positionLevel'] ?? '';
     $experienceNeeded = $_GET['experienceNeeded'] ?? 0;
     $skills = [
