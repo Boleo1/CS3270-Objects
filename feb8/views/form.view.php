@@ -2,7 +2,8 @@
 	$skills = ['C++', 'C#', 'Python', 'JavaScript', 'PHP', 'Rust', 'HTML', 'CSS'];
 	$level = ['entry', 'mid', 'senior'];
 ?>
-<form action="" method="get" class="submissionForm>
+<div class = "formContainer">
+<form action="" method="get" class="submissionForm">
 	<div>
 		<p>Job Title</p>
 		<input type="text" name="jobTitle" id="jobTitle" required>
@@ -41,5 +42,10 @@
 			<?php endfor;?>
 		</select>
 	</div>
+		<div>
+    		<label for="maxApplicants">Number of Applicants to Show: </label>
+    		<input type="number" name="maxApplicants" id="maxApplicants" min="0" placeholder="All">
+		</div>
 	<input type="submit" value="Submit">
 </form>
+</div>

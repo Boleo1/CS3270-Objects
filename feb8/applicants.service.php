@@ -27,8 +27,10 @@ class Applicant {
 }
 
 class ApplicantService {
+	
 	public function __construct(){
 	}
+
 	// Gets users from JSON file and returns them as an array //
 	public function get_users_from_database():array{
 		//simply returns an unfiltered list of users from applicants.json

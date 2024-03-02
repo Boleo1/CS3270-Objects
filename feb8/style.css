@@ -1,6 +1,10 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: #f5f5f5;
 }
 
 .inputForm {
@@ -12,8 +16,32 @@
     border: 2px solid black;
     background-color: red;
 }
+
+.formContainer {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2em;
+
+}
 .submissionForm{
     padding: 5px;
     margin: 10px;
-    background-color: #f5f5f5;
+}
+
+.applicantSumContainer{
+    padding: 10px;
+    margin: 5px;
+}
+
+.applicantSumResults{
+    margin: 10px;
+}
+.applicantSumResults p {
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+.welcome-container{
+    padding: 30px;
+    border-bottom: 2px solid black;
 }
