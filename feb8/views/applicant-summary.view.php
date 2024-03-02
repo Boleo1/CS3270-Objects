@@ -7,7 +7,6 @@
         'skills' => ($users[$userVal]['skills']),
     ]
 ?>
-
 <div class="applicantSummary">
 <?php
     echo "<h2>Applicant Summary</h2>";
@@ -17,6 +16,7 @@
     foreach($applicant['skills'] as $skill){
         echo $skill . " " . PHP_EOL;
     };
+    echo $_GET['jobTitle'];
     
 ?>
 </div>

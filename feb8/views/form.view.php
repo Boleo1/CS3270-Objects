@@ -2,7 +2,7 @@
 	$skills = ['C++', 'C#', 'Python', 'JavaScript', 'PHP', 'Rust', 'HTML', 'CSS'];
 	$level = ['entry', 'mid', 'senior'];
 ?>
-<form action="" method="get">
+<form action="" method="get" class="submissionForm>
 	<div>
 		<p>Job Title</p>
 		<input type="text" name="jobTitle" id="jobTitle" required>

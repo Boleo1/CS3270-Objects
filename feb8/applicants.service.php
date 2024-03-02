@@ -29,25 +29,25 @@ class Applicant {
 class ApplicantService {
 	public function __construct(){
 	}
-
+	// Gets users from JSON file and returns them as an array //
 	public function get_users_from_database():array{
 		//simply returns an unfiltered list of users from applicants.json
 		return get_users();
 	}
 
-	// 4.) Create a method that gets a user by its level and returns all users from the corresponding array.
+// 4.) Create a method that gets a user by its level and returns all users from the corresponding array.
 	public function get_users_by_level(string $level): array {
 		$users = $this->get_users_from_database();
 		return array_filter($users, fn($user) => $user->level === $level);
 	}
 
-	// 5.) in applicant service create a method that takes in int $experience and returns an array of applicants who have at minimum the number of yearh experience passed in.
+// 5.) in applicant service create a method that takes in int $experience and returns an array of applicants who have at minimum the number of yearh experience passed in.
 	public function get_users_by_experience(int $experience): array {
 		$users = $this->get_users_from_database();
 		return array_filter($users, fn($user) => $user->experience === $experience);
 	}
 
-	// 6.) in applicant service create a method that takes array $skills as a parameter, and returns a list of applicants who have at least one of those skills.
+// 6.) in applicant service create a method that takes array $skills as a parameter, and returns a list of applicants who have at least one of those skills.
 	public function get_users_by_skill(array $skills){
 		$users = $this->get_users_from_database();
 		$displayUsers = array_filter($users, function($user) use ($skills){
@@ -61,7 +61,7 @@ class ApplicantService {
         return $displayUsers;
     }
 
-	// 7.) In applicant service create a method that takes in string $level, int $experience, and array $skills and returns a list of applicants who match those requirements.
+// 7.) In applicant service create a method that takes in string $level, int $experience, and array $skills and returns a list of applicants who match those requirements.
 	public function show_all_stats(string $level, int $experience, array $skills){
 		$users = $this->get_users_from_database();
 		$displayedUsers = array_filter($users, function($user) use ($level, $experience, $skills){
@@ -76,7 +76,7 @@ class ApplicantService {
 		return array_values($displayedUsers);
 	}
 
-	// 8.) Currently the list of applicants is unsorted.  In applicant service make a method that will take in array $applicants and return a sorted list of applicants.
+// 8.) Currently the list of applicants is unsorted.  In applicant service make a method that will take in array $applicants and return a sorted list of applicants.
 	public function sort_users(){
 		$users = $this->get_users_from_database();
 		usort($users, function($a, $b){
@@ -89,8 +89,18 @@ class ApplicantService {
 		return $users;
 	}
 	
-	// 9.) In the form view add an optional field for number of applicants.  This field will be the number of applicants shown in the results.
+// 9.) In the form view add an optional field for number of applicants.  This field will be the number of applicants shown in the results.
 	public function num_of_applicants(){
-		
+		$users = $this->get_users_from_database();
+		$userCount = 0;
+		foreach ($users as $user){
+			if(isset($user["id"])){
+				$userCount += 1;
+			}
+			else {
+				break;
+			}
+		}
+		return $userCount;
 	}
 }	
